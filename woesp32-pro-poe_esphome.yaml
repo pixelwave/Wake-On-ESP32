@@ -1,0 +1,256 @@
+esphome:
+  name: woesp32-s3-7p-eth
+  friendly_name: woesp32-S3-7P-ETH
+  platformio_options:
+    board_build.flash_mode: dio
+
+esp32:
+  board: esp32-s3-devkitc-1
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "..." #generate own API key!
+
+ota:
+  password: "..." #generate own pass key!
+
+external_components:
+  - source:
+      type: git
+      url: https://github.com/JeroenVanOort/esphome/
+      ref: eth-w5500
+    components: [ ethernet ]
+
+ethernet:
+  type: W5500
+  clk_pin: GPIO10
+  mosi_pin: GPIO12
+  miso_pin: GPIO11
+  cs_pin: GPIO09
+  interrupt_pin: GPIO13
+  reset_pin: GPIO14
+  clock_speed: 30Mhz
+  #manual_ip:
+  #  static_ip: 192.168.178.222
+  #  gateway: 192.168.178.1
+  #  subnet: 255.255.255.0
+  #domain: .local
+
+# Enable Web server.
+web_server:
+  port: 80
+
+switch:
+  # PC POWER -----------------
+
+  # PC 1
+  - platform: gpio
+    pin:
+      number: 6
+      allow_other_uses: true
+    id: spPC1
+    name: "PC 1 - Short Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 150ms
+    - switch.turn_off: spPC1
+  - platform: gpio
+    pin:
+      number: 6
+      allow_other_uses: true
+    id: lpPC1
+    name: "PC 1 - Long Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 5000ms
+    - switch.turn_off: lpPC1
+
+  # PC 2
+  - platform: gpio
+    pin:
+      number: 21
+      allow_other_uses: true
+    id: spPC2
+    name: "PC 2 - Short Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 150ms
+    - switch.turn_off: spPC2
+  - platform: gpio
+    pin:
+      number: 21
+      allow_other_uses: true
+    id: lpPC2
+    name: "PC 2 - Long Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 5000ms
+    - switch.turn_off: lpPC2
+
+  # PC 3
+  - platform: gpio
+    pin:
+      number: 38
+      allow_other_uses: true
+    id: spPC3
+    name: "PC 3 - Short Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 150ms
+    - switch.turn_off: spPC3
+  - platform: gpio
+    pin:
+      number: 38
+      allow_other_uses: true
+    id: lpPC3
+    name: "PC 3 - Long Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 5000ms
+    - switch.turn_off: lpPC3
+
+  # PC 4
+  - platform: gpio
+    pin:
+      number: 39
+      allow_other_uses: true
+    id: spPC4
+    name: "PC 4 - Short Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 150ms
+    - switch.turn_off: spPC4
+  - platform: gpio
+    pin:
+      number: 39
+      allow_other_uses: true
+    id: lpPC4
+    name: "PC 4 - Long Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 5000ms
+    - switch.turn_off: lpPC4
+
+  # PC 5
+  - platform: gpio
+    pin:
+      number: 40
+      allow_other_uses: true
+    id: spPC5
+    name: "PC 5 - Short Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 150ms
+    - switch.turn_off: spPC5
+  - platform: gpio
+    pin:
+      number: 40
+      allow_other_uses: true
+    id: lpPC5
+    name: "PC 5 - Long Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 5000ms
+    - switch.turn_off: lpPC5
+
+  # PC 6
+  - platform: gpio
+    pin:
+      number: 41
+      allow_other_uses: true
+    id: spPC6
+    name: "PC 6 - Short Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 150ms
+    - switch.turn_off: spPC6
+  - platform: gpio
+    pin:
+      number: 41
+      allow_other_uses: true
+    id: lpPC6
+    name: "PC 6 - Long Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 5000ms
+    - switch.turn_off: lpPC6
+
+  # PC 7
+  - platform: gpio
+    pin:
+      number: 15
+      allow_other_uses: true
+    id: spPC7
+    name: "PC 7 - Short Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 150ms
+    - switch.turn_off: spPC7
+  - platform: gpio
+    pin:
+      number: 15
+      allow_other_uses: true
+    id: lpPC7
+    name: "PC 7 - Long Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 5000ms
+    - switch.turn_off: lpPC7
+
+binary_sensor:
+  # PC LED -----------------
+  - platform: gpio
+    pin:
+      number: 7
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "PC 1 - STATE"
+    icon: "mdi:lightbulb-question"
+  - platform: gpio
+    pin:
+      number: 20
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "PC 2 - STATE"
+    icon: "mdi:lightbulb-question"
+  - platform: gpio
+    pin:
+      number: 19
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "PC 3 - STATE"
+    icon: "mdi:lightbulb-question"
+  - platform: gpio
+    pin:
+      number: 8
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "PC 4 - STATE"
+    icon: "mdi:lightbulb-question"  
+  - platform: gpio
+    pin:
+      number: 18
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "PC 5 - STATE"
+    icon: "mdi:lightbulb-question"  
+  - platform: gpio
+    pin:
+      number: 17
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "PC 6 - STATE"
+    icon: "mdi:lightbulb-question"  
+  - platform: gpio
+    pin:
+      number: 16
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "PC 7 - STATE"
+    icon: "mdi:lightbulb-question"      
