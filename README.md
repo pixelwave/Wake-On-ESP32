@@ -13,6 +13,9 @@ The ESP32 controller is flashed with ESPHome and integrated into my Home Assista
 
 The system connects to standard mainboard F_PANEL pins and supports <shortpress> and <longpress> behavior. Additonally it reads directly the Power LED state. 
 
+**Wireing (PRO Version)**
+![WOESP32-Pro-POE](https://github.com/pixelwave/Wake-On-ESP32/assets/19491804/a4989e78-f4bb-4191-9037-2a1411423622)
+
 **Components**
 
 **PRO Version (POE):**
@@ -37,5 +40,5 @@ The system connects to standard mainboard F_PANEL pins and supports <shortpress>
   
 **3D Model files:**
 - WOESP32 PRO (10P) (https://www.printables.com/model/706094-10p-keystone-enclosure)
-- WOESP32 (5P) (https://www.printables.com/model/706094-10p-keystone-enclosure)
-- WOESP32 PCIe Card (https://www.printables.com/model/706094-10p-keystone-enclosure)
+- WOESP32 (5P) (https://www.printables.com/model/706089-5p-keystone-enclosure)
+- WOESP32 PCIe Card (https://www.printables.com/model/679291-pcie-card-adapter-rj-45-keystone-to-2x-4-pin-dupon)
