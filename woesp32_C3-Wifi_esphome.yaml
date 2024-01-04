@@ -1,0 +1,155 @@
+esphome:
+  name: woesp32-4p
+  friendly_name: woesp32-4p
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "..." #create own key!!
+
+ota:
+  password: "..." #create own pass!!
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Woesp32-4P Fallback Hotspot"
+    password: "..." #create own pass!!
+
+# Enable Web server.
+web_server:
+  port: 80
+
+captive_portal:
+
+switch:
+  # PC Switches (ON/OFF)
+  # PC 1
+  - platform: gpio
+    pin:
+      number: 5
+      allow_other_uses: true
+    id: spPC1
+    name: "PC 1 - Short Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 150ms
+    - switch.turn_off: spPC1
+  - platform: gpio
+    pin:
+      number: 5
+      allow_other_uses: true
+    id: lpPC1
+    name: "PC 1 - Long Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 5000ms
+    - switch.turn_off: lpPC1
+
+  # PC 2
+  - platform: gpio
+    pin:
+      number: 6
+      allow_other_uses: true
+    id: spPC2
+    name: "PC 2 - Short Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 150ms
+    - switch.turn_off: spPC2
+  - platform: gpio
+    pin:
+      number: 6
+      allow_other_uses: true
+    id: lpPC2
+    name: "PC 2 - Long Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 5000ms
+    - switch.turn_off: lpPC2
+
+  # PC 3
+  - platform: gpio
+    pin:
+      number: 7
+      allow_other_uses: true
+    id: spPC3
+    name: "PC 3 - Short Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 150ms
+    - switch.turn_off: spPC3
+  - platform: gpio
+    pin:
+      number: 7
+      allow_other_uses: true
+    id: lpPC3
+    name: "PC 3 - Long Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 5000ms
+    - switch.turn_off: lpPC3
+
+  # PC 4
+  - platform: gpio
+    pin:
+      number: 8
+      allow_other_uses: true
+    id: spPC4
+    name: "PC 4 - Short Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 150ms
+    - switch.turn_off: spPC4
+  - platform: gpio
+    pin:
+      number: 8
+      allow_other_uses: true
+    id: lpPC4
+    name: "PC 4 - Long Press"
+    icon: "mdi:power"
+    on_turn_on:
+    - delay: 5000ms
+    - switch.turn_off: lpPC4
+
+binary_sensor:
+  # PC Sensors (ON/OFF)
+  - platform: gpio
+    pin:
+      number: 4
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "PC 1 - STATE"
+    icon: "mdi:lightbulb-question"
+  - platform: gpio
+    pin:
+      number: 10
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "PC 2 - STATE"
+    icon: "mdi:lightbulb-question"
+  - platform: gpio
+    pin:
+      number: 3
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "PC 3 - STATE"
+    icon: "mdi:lightbulb-question"
+  - platform: gpio
+    pin:
+      number: 2
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "PC 4 - STATE"
+    icon: "mdi:lightbulb-question"       
