@@ -45,3 +45,6 @@ The system connects to standard mainboard F_PANEL pins and supports _< shortpres
 (https://makerworld.com/en/models/122594, https://www.printables.com/model/706089-5p-keystone-enclosure)
 - **WOESP32 PCIe Card**
 (https://makerworld.com/en/models/95323#profileId-101686, https://www.printables.com/model/679291-pcie-card-adapter-rj-45-keystone-to-2x-4-pin-dupon)
+
+_______
+If you like my uploads buy me a coffee -> https://bit.ly/pwave-donate
