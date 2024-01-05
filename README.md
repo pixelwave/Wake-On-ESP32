@@ -5,7 +5,7 @@ Since WOL (Wake on LAN) was unreliable for me in some use cases and in bulk util
 
 ![lineup_HD](https://github.com/pixelwave/Wake-On-ESP32/assets/19491804/33a46f0b-b632-4d54-8717-afaebc8437ef)
 
-You choose between a 5 or 10 port enclosure. WiFi connection or Ethernet (POE). Total Power Consumption is below 1 Watt.
+You choose between a 5 (Standard) or 10 (PRO) port enclosure. WiFi connection or Ethernet (POE). Total Power Consumption is below 1 Watt.
 
 The ESP32 controller is flashed with ESPHome and integrated into my Home Assistant setup for further automation and remote control:
 
@@ -20,7 +20,7 @@ The system connects to standard mainboard F_PANEL pins and supports _< shortpres
 
 **PRO Version (POE):**
 - 1x Lilygo T-ETH-Lite S3 + POE Shield
-- 7x PC817 Optocoupler
+- 14x PC817 Optocoupler
 - 14x 1K resistors
 - 7x Keystone: deleyCON CAT6a (self-wire)
 - 1x Keystone: deleyCON CAT6a (direct-plug)
@@ -29,7 +29,7 @@ The system connects to standard mainboard F_PANEL pins and supports _< shortpres
 
 **Standard Version (WiFi):**
 - 1x ESP32-C3-DevKitM-1
-- 4x PC817 Optocoupler
+- 8x PC817 Optocoupler
 - 8x 1K resistors
 - 4x Keystone: deleyCON CAT6a (self-wire)
 - 1x Keystone: USB-C
