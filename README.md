@@ -11,7 +11,7 @@ The ESP32 controller is flashed with ESPHome and integrated into my Home Assista
 
 <img width="501" alt="Screenshot 2024-01-04 at 09 27 07" src="https://github.com/pixelwave/Wake-On-ESP32/assets/19491804/090095f4-51db-453c-ae6c-5c5cf84123a4">
 
-The system connects to standard mainboard F_PANEL pins and supports _< shortpress >_ and _< longpress >_ behavior. Additonally it reads directly the Power LED state. 
+The system connects to standard mainboard F_PANEL pins and supports _< shortpress >_ and _< longpress >_ behavior of the power button. Additonally it reads directly the Power LED state. The PCIe card has additional inputs for the standard power button and LED pins from the PC enclosure so you can use both - remote and local control. 
 
 **Wireing (PRO Version)**
 ![WOESP32-Pro-POE](https://github.com/pixelwave/Wake-On-ESP32/assets/19491804/a4989e78-f4bb-4191-9037-2a1411423622)
