@@ -5,6 +5,10 @@ Since WOL (Wake on LAN) was unreliable for me in some use cases and in bulk util
 
 ![lineup_HD](https://github.com/pixelwave/Wake-On-ESP32/assets/19491804/33a46f0b-b632-4d54-8717-afaebc8437ef)
 
+![Server_Reck_2024-Jan-10_07-31-08AM-000_CustomizedView20343652118](https://github.com/pixelwave/Wake-On-ESP32/assets/19491804/bfc78bb4-148b-4e71-9d82-ec4dc23af22a)
+
+![2024-01-04_awugsy4z56uo](https://github.com/pixelwave/Wake-On-ESP32/assets/19491804/fdf74cb2-8742-47aa-927e-fa609d6f9683)
+
 You choose between a 5 (Standard) or 10 (PRO) port enclosure. WiFi connection or Ethernet (POE). Total Power Consumption is below 1 Watt.
 
 The ESP32 controller is flashed with ESPHome and integrated into my Home Assistant setup for further automation and remote control:
