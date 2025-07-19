@@ -20,6 +20,12 @@ The system connects to standard mainboard F_PANEL pins and supports _< shortpres
 **Wireing (PRO Version)**
 ![WOESP32-Pro-POE](https://github.com/pixelwave/Wake-On-ESP32/assets/19491804/a4989e78-f4bb-4191-9037-2a1411423622)
 
+I had a piKVM laying around (bliKVM or something) and it also came with an ethernet cable that was used as a simple way to transport the LED+/- and POWER ON/OFF signals. I just adopted that pin layout so I could interchange the cables / components easily with that system.
+
+So my RJ-45 pin layout looks like this:
+
+<img width="601" height="679" alt="Screenshot 2025-07-19 at 06 45 34" src="https://github.com/user-attachments/assets/0ef46eb3-1f7a-44a0-aa38-10efe2fb31ab" />
+
 **Components**
 
 **PRO Version (POE):**
