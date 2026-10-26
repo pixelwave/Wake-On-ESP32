@@ -1,3 +1,7 @@
+If you find my work useful, please consider supporting:
+
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-pixelWAVE-ea4aaa?logo=github-sponsors&logoColor=white)](https://donate.p-wave.de/)
+
 # Wake-On-ESP32
 Using an ESP32 to control multiple PCs via Ethernet.
 
